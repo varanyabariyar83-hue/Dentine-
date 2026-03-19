@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <!-- SEO -->
-  <title>DENTINE – Dental, Skin & Hair Clinic | Dr. Anuj | Greater Noida</title>
-  <meta name="description" content="DENTINE Dental, Skin & Hair Clinic by Dr. Anuj at Migsun Vilaasa, Eta II, Greater Noida. Expert dental care, advanced skin treatments & hair solutions. Open all days 10 AM–10 PM. Call 097617 04667."/>
-  <meta name="keywords" content="dental clinic Greater Noida, skin clinic Eta 2, hair clinic Greater Noida, Dr Anuj dentist, Migsun Vilaasa clinic, teeth whitening Greater Noida, root canal Greater Noida, dermatologist Greater Noida, hair loss treatment Greater Noida, DENTINE clinic"/>
+  <title>DENTINE – Dental, Skin & Hair Clinic | Greater Noida</title>
+  <meta name="description" content="DENTINE Dental, Skin & Hair Clinic at Migsun Twiinz, Eta II, Greater Noida. Expert dental care, advanced skin treatments & hair solutions. Open all days 10 AM–10 PM. Call 097617 04667."/>
+  <meta name="keywords" content="dental clinic Greater Noida, skin clinic Eta 2, hair clinic Greater Noida, Migsun Twiinz clinic, teeth whitening Greater Noida, root canal Greater Noida, dermatologist Greater Noida, hair loss treatment Greater Noida, DENTINE clinic"/>
   <meta name="robots" content="index, follow"/>
   <meta name="author" content="DENTINE Dental Skin Hair Clinic"/>
   <meta name="geo.region" content="IN-UP"/>
   <meta name="geo.placename" content="Greater Noida"/>
   <link rel="canonical" href="https://dentineclinic.in/"/>
-  <meta property="og:title" content="DENTINE – Dental, Skin & Hair Clinic | Dr. Anuj | Greater Noida"/>
-  <meta property="og:description" content="Expert dental, skin & hair treatments by Dr. Anuj at Migsun Vilaasa, Eta II, Greater Noida. Open all days 10 AM–10 PM."/>
+  <meta property="og:title" content="DENTINE – Dental, Skin & Hair Clinic | Greater Noida"/>
+  <meta property="og:description" content="Expert dental, skin & hair treatments at Migsun Twiinz, Eta II, Greater Noida. Open all days 10 AM–10 PM."/>
   <meta property="og:type" content="business.business"/>
   <meta property="og:locale" content="en_IN"/>
 
@@ -27,7 +27,7 @@
     "medicalSpecialty":["Dentistry","Dermatology","Trichology"],
     "address":{
       "@type":"PostalAddress",
-      "streetAddress":"Shop No-28, Ground Floor, Migsun Vilaasa, Twiinz",
+      "streetAddress":"Shop No-28, Ground Floor, Migsun Twiinz, Twiinz",
       "addressLocality":"Greater Noida",
       "addressRegion":"Uttar Pradesh",
       "postalCode":"201310",
@@ -473,28 +473,118 @@
     }
     .seo-highlight p { font-size: .88rem; color: var(--teal-dk); font-weight: 500; }
 
-    /* ══ DOCTOR SECTION ══ */
-    .doctor-sec {
-      background: linear-gradient(135deg, var(--teal-dk) 0%, var(--teal) 40%, var(--teal-lt) 100%);
-      padding: 90px 56px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+
+
+
+    
+    /* ══ ANIMATED DOCTORS SECTION ══ */
+    @keyframes floatUp   { 0%,100%{transform:translateY(0)}  50%{transform:translateY(-8px)} }
+    @keyframes floatUpB  { 0%,100%{transform:translateY(0)}  50%{transform:translateY(-10px)} }
+    @keyframes pulse-ring{ 0%,100%{r:22;opacity:.6} 50%{r:30;opacity:.15} }
+    @keyframes stethAnim { 0%,100%{stroke-dashoffset:0} 50%{stroke-dashoffset:12} }
+    @keyframes blink-dot { 0%,100%{opacity:1} 50%{opacity:.3} }
+    @keyframes scan-line { 0%{transform:translateY(0)} 100%{transform:translateY(80px)} }
+    @keyframes shimmer   { 0%{opacity:.4} 50%{opacity:.9} 100%{opacity:.4} }
+    @keyframes spin-slow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    @keyframes card-in   { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+
+    .doctors-sec {
+      background: linear-gradient(160deg, var(--ink) 0%, var(--ink2) 50%, var(--teal-dk) 100%);
+      padding: 100px 56px;
+      position: relative; overflow: hidden;
     }
-    .doctor-art { display: flex; align-items: center; justify-content: center; }
-    .doctor-content { color: var(--white); }
-    .doctor-content .sec-eyebrow { color: var(--aqua-lt); }
-    .doctor-content .sec-eyebrow::before { background: var(--aqua-lt); }
-    .doctor-content .sec-title { color: var(--white); }
-    .doctor-content .sec-body { color: rgba(255,255,255,0.75); }
-    .doctor-credentials {
-      margin-top: 28px; display: flex; flex-direction: column; gap: 12px;
+    .doctors-sec::before {
+      content:'';
+      position:absolute; inset:0;
+      background-image: radial-gradient(circle, rgba(78,205,196,0.07) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events:none;
     }
-    .cred-item {
-      display: flex; align-items: center; gap: 12px;
-      font-size: .88rem; color: rgba(255,255,255,0.85);
+    .doctors-sec::after {
+      content:'';
+      position:absolute; bottom:-80px; right:-80px;
+      width:400px; height:400px; border-radius:50%;
+      border:1px solid rgba(78,205,196,0.08);
+      pointer-events:none;
     }
-    .cred-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--aqua); flex-shrink: 0;
+    .doctors-header {
+      text-align:center; margin-bottom:72px; position:relative; z-index:1;
+    }
+    .doctors-header .sec-eyebrow { justify-content:center; color:var(--aqua-lt); }
+    .doctors-header .sec-eyebrow::before { background:var(--aqua-lt); }
+    .doctors-header .sec-eyebrow::after  { content:''; width:20px; height:2px; background:var(--aqua); border-radius:1px; }
+    .doctors-header .sec-title { color:#fff; }
+    .doctors-header .sec-body  { color:rgba(255,255,255,.6); max-width:520px; margin:0 auto; }
+
+    .doctors-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 28px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative; z-index:1;
+    }
+    .doc-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(78,205,196,0.15);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+      animation: card-in .7s ease both;
+    }
+    .doc-card:nth-child(1){ animation-delay:.05s }
+    .doc-card:nth-child(2){ animation-delay:.15s }
+    .doc-card:nth-child(3){ animation-delay:.25s }
+    .doc-card:nth-child(4){ animation-delay:.35s }
+    .doc-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 28px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(78,205,196,.3);
+      border-color: rgba(78,205,196,0.4);
+    }
+    .doc-card-art {
+      width:100%; aspect-ratio:1;
+      display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(160deg, rgba(6,90,104,.7) 0%, rgba(10,123,140,.5) 100%);
+      position:relative; overflow:hidden;
+    }
+    .doc-card-art svg { width:90%; height:90%; }
+    .doc-card-body {
+      padding: 22px 20px 26px;
+    }
+    .doc-card-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem; color: #fff;
+      margin-bottom: 4px; line-height:1.2;
+    }
+    .doc-card-badge {
+      display:inline-flex; align-items:center; gap:6px;
+      background:rgba(78,205,196,.15); border:1px solid rgba(78,205,196,.3);
+      border-radius:50px; padding:3px 12px;
+      font-size:.62rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+      color:var(--aqua-lt); margin-bottom:16px;
+    }
+    .doc-qual-list { list-style:none; display:flex; flex-direction:column; gap:8px; }
+    .doc-qual-list li {
+      display:flex; align-items:flex-start; gap:10px;
+      font-size:.8rem; color:rgba(255,255,255,.6); line-height:1.5;
+    }
+    .doc-qual-list li::before {
+      content:''; flex-shrink:0; width:6px; height:6px; border-radius:50%;
+      background:var(--aqua); margin-top:5px;
+    }
+    .doc-role {
+      margin-top:18px; padding-top:16px;
+      border-top:1px solid rgba(78,205,196,.12);
+      font-size:.72rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
+      color:var(--aqua);
+    }
+
+    @media(max-width:960px){
+      .doctors-sec  { padding:60px 28px; }
+      .doctors-grid { grid-template-columns:repeat(2,1fr); gap:20px; }
+    }
+    @media(max-width:560px){
+      .doctors-grid { grid-template-columns:1fr; }
     }
 
     /* ══ TESTIMONIALS ══ */
@@ -661,7 +751,7 @@
       .services-sec{padding:70px 28px}
       .tab-panel.active{grid-template-columns:1fr 1fr}
       .why-grid{grid-template-columns:repeat(2,1fr)}
-      .doctor-sec{grid-template-columns:1fr;padding:60px 28px}
+
       .seo-sec{grid-template-columns:1fr;padding:60px 28px}
       .testimonials-sec{padding:70px 28px}
       .testi-grid{grid-template-columns:1fr}
@@ -691,7 +781,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#doctor">Doctor</a></li>
+    <li><a href="#doctors">Our Doctors</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a class="nav-cta" href="tel:+910976170466">📞 Book Appointment</a>
@@ -710,8 +800,8 @@
     <div class="hero-dr">
       <div class="hero-dr-avatar">👨‍⚕️</div>
       <div>
-        <div class="hero-dr-name">Dr. Anuj</div>
-        <div class="hero-dr-title">Principal Consultant — Dental, Skin & Hair</div>
+        <div class="hero-dr-name">Expert Specialists</div>
+        <div class="hero-dr-title">4 Qualified Doctors — Dental, Skin & Hair</div>
       </div>
     </div>
     <p class="hero-para">
@@ -853,14 +943,14 @@
     <span class="ticker-item">Skin Care Specialist <span class="ticker-sep">◆</span></span>
     <span class="ticker-item">Hair Treatment Eta II <span class="ticker-sep">◆</span></span>
     <span class="ticker-item">Open All Days 10AM–10PM <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Dr. Anuj — Expert Consultant <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Migsun Vilaasa, Greater Noida <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Expert Multi-Specialty Doctors <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Migsun Twiinz, Greater Noida <span class="ticker-sep">◆</span></span>
     <span class="ticker-item">Dental Clinic Greater Noida <span class="ticker-sep">◆</span></span>
     <span class="ticker-item">Skin Care Specialist <span class="ticker-sep">◆</span></span>
     <span class="ticker-item">Hair Treatment Eta II <span class="ticker-sep">◆</span></span>
     <span class="ticker-item">Open All Days 10AM–10PM <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Dr. Anuj — Expert Consultant <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Migsun Vilaasa, Greater Noida <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Expert Multi-Specialty Doctors <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Migsun Twiinz, Greater Noida <span class="ticker-sep">◆</span></span>
   </div>
 </div>
 
@@ -910,7 +1000,7 @@
     <p class="sec-eyebrow reveal">About Us</p>
     <h2 class="sec-title reveal">Complete Care,<br><em>One Destination</em></h2>
     <p class="sec-body reveal">
-      DENTINE is a trusted multi-specialty clinic in the heart of Greater Noida, offering expert care across three disciplines — dentistry, dermatology, and trichology. Under the guidance of Dr. Anuj, we combine clinical excellence with a patient-first philosophy.
+      DENTINE is a trusted multi-specialty clinic in the heart of Greater Noida, offering expert care across three disciplines — dentistry, dermatology, and trichology. Our team of expert doctors combine clinical excellence with a patient-first philosophy.
     </p>
     <div class="about-list">
       <div class="about-item reveal">
@@ -1024,106 +1114,373 @@
   <div>
     <h2>Best <em>Dental, Skin & Hair</em><br>Clinic in Greater Noida</h2>
     <div class="seo-highlight">
-      <p>📍 Shop No-28, Migsun Vilaasa Twiinz, Eta II — Conveniently accessible from Knowledge Park, Pari Chowk, Alpha, Beta, and Gamma sectors.</p>
+      <p>📍 Shop No-28, Migsun Twiinz, Eta II — Conveniently accessible from Knowledge Park, Pari Chowk, Alpha, Beta, and Gamma sectors.</p>
     </div>
   </div>
   <div>
-    <p>Looking for a trusted <strong>dental clinic in Greater Noida</strong>, an experienced <strong>skin specialist near Eta II</strong>, or effective <strong>hair loss treatment in Greater Noida</strong>? DENTINE brings all three under one roof at Migsun Vilaasa, making quality healthcare accessible and convenient.</p>
-    <p>Whether it's a routine dental check-up, advanced acne scar treatment, or PRP for hair regrowth — Dr. Anuj and the DENTINE team provide evidence-based, personalised care. <strong>Open all 7 days, 10 AM to 10 PM.</strong> No appointment needed for consultation.</p>
+    <p>Looking for a trusted <strong>dental clinic in Greater Noida</strong>, an experienced <strong>skin specialist near Eta II</strong>, or effective <strong>hair loss treatment in Greater Noida</strong>? DENTINE brings all three under one roof at Migsun Twiinz, making quality healthcare accessible and convenient.</p>
+    <p>Whether it's a routine dental check-up, advanced acne scar treatment, or PRP for hair regrowth — the DENTINE team of specialists provide evidence-based, personalised care. <strong>Open all 7 days, 10 AM to 10 PM.</strong> No appointment needed for consultation.</p>
   </div>
 </section>
 
-<!-- ══ DOCTOR ══ -->
-<section class="doctor-sec sec" id="doctor">
-  <div class="doctor-art reveal">
-    <svg viewBox="0 0 340 380" xmlns="http://www.w3.org/2000/svg" width="85%" max-width="340">
-      <defs>
-        <radialGradient id="drBg" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="rgba(255,255,255,0.12)"/>
-          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-        </radialGradient>
-        <linearGradient id="coatG" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#FFFFFF"/>
-          <stop offset="100%" stop-color="#E6F6F8"/>
-        </linearGradient>
-        <linearGradient id="skinDr" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#D4956A"/>
-          <stop offset="100%" stop-color="#B07040"/>
-        </linearGradient>
-        <filter id="drShadow"><feDropShadow dx="0" dy="6" stdDeviation="14" flood-color="rgba(0,0,0,0.25)"/></filter>
-      </defs>
-      <!-- background glow -->
-      <ellipse cx="170" cy="200" rx="140" ry="160" fill="url(#drBg)"/>
-      <circle cx="170" cy="190" r="130" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-      <circle cx="170" cy="190" r="100" fill="none" stroke="rgba(78,205,196,0.2)" stroke-width="1"/>
-
-      <!-- DOCTOR FIGURE -->
-      <!-- white coat body -->
-      <rect x="95" y="230" width="150" height="130" rx="12" fill="url(#coatG)" filter="url(#drShadow)"/>
-      <!-- coat lapels -->
-      <path d="M150,230 L170,265 L190,230" fill="none" stroke="rgba(10,123,140,0.3)" stroke-width="2"/>
-      <!-- stethoscope -->
-      <path d="M145,245 Q130,270 135,295 Q140,315 160,315 Q180,315 185,295 Q190,270 175,245" fill="none" stroke="#4ECDC4" stroke-width="3" stroke-linecap="round"/>
-      <circle cx="160" cy="318" r="9" fill="#4ECDC4"/>
-      <circle cx="160" cy="318" r="5" fill="white"/>
-      <!-- coat pocket -->
-      <rect x="110" y="270" width="38" height="30" rx="4" fill="none" stroke="rgba(10,123,140,0.2)" stroke-width="1.5"/>
-      <text x="129" y="290" text-anchor="middle" font-size="13">📋</text>
-      <!-- name tag -->
-      <rect x="192" y="268" width="42" height="22" rx="3" fill="rgba(10,123,140,0.12)" stroke="rgba(10,123,140,0.2)" stroke-width="1"/>
-      <text x="213" y="280" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="6.5" fill="#0A7B8C" font-weight="600">DR. ANUJ</text>
-      <text x="213" y="286" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="5.5" fill="#4A6570">DENTINE</text>
-      <!-- arms -->
-      <rect x="75"  y="238" width="22" height="80" rx="10" fill="url(#coatG)"/>
-      <rect x="243" y="238" width="22" height="80" rx="10" fill="url(#coatG)"/>
-      <!-- hands with clipboard -->
-      <ellipse cx="86"  cy="325" rx="14" ry="11" fill="url(#skinDr)"/>
-      <ellipse cx="254" cy="325" rx="14" ry="11" fill="url(#skinDr)"/>
-      <!-- clipboard -->
-      <rect x="234" y="300" width="38" height="48" rx="4" fill="white" stroke="rgba(10,123,140,0.2)" stroke-width="1.5"/>
-      <rect x="248" y="294" width="10" height="8" rx="2" fill="#4ECDC4"/>
-      <line x1="240" y1="316" x2="266" y2="316" stroke="rgba(10,123,140,0.2)" stroke-width="1"/>
-      <line x1="240" y1="324" x2="266" y2="324" stroke="rgba(10,123,140,0.2)" stroke-width="1"/>
-      <line x1="240" y1="332" x2="258" y2="332" stroke="rgba(10,123,140,0.2)" stroke-width="1"/>
-      <!-- NECK -->
-      <rect x="156" y="197" width="28" height="36" rx="6" fill="url(#skinDr)"/>
-      <!-- HEAD -->
-      <ellipse cx="170" cy="176" rx="52" ry="56" fill="url(#skinDr)" filter="url(#drShadow)"/>
-      <!-- hair -->
-      <path d="M118,162 Q122,120 170,116 Q218,120 222,162 Q215,135 170,130 Q125,135 118,162Z" fill="#1a0f05"/>
-      <path d="M118,162 Q115,148 118,138 Q124,122 142,116 Q125,126 120,155Z" fill="#1a0f05"/>
-      <path d="M222,162 Q225,148 222,138 Q216,122 198,116 Q215,126 220,155Z" fill="#1a0f05"/>
-      <!-- face features -->
-      <ellipse cx="155" cy="172" rx="7" ry="7.5" fill="#6b3e1e"/>
-      <ellipse cx="185" cy="172" rx="7" ry="7.5" fill="#6b3e1e"/>
-      <ellipse cx="155" cy="171" rx="3.5" ry="3.5" fill="#1a0f05"/>
-      <ellipse cx="185" cy="171" rx="3.5" ry="3.5" fill="#1a0f05"/>
-      <!-- eyebrows -->
-      <path d="M147,162 Q155,157 163,162" fill="none" stroke="#1a0f05" stroke-width="2.5" stroke-linecap="round"/>
-      <path d="M177,162 Q185,157 193,162" fill="none" stroke="#1a0f05" stroke-width="2.5" stroke-linecap="round"/>
-      <!-- smile -->
-      <path d="M158,192 Q170,201 182,192" fill="none" stroke="#7A3E1E" stroke-width="2" stroke-linecap="round"/>
-      <!-- glasses -->
-      <rect x="145" y="164" width="20" height="14" rx="6" fill="none" stroke="#2a1a08" stroke-width="1.5"/>
-      <rect x="175" y="164" width="20" height="14" rx="6" fill="none" stroke="#2a1a08" stroke-width="1.5"/>
-      <line x1="165" y1="170" x2="175" y2="170" stroke="#2a1a08" stroke-width="1.5"/>
-    </svg>
-  </div>
-  <div class="doctor-content">
-    <p class="sec-eyebrow reveal">Meet Your Doctor</p>
-    <h2 class="sec-title reveal">Dr. Anuj</h2>
-    <p class="sec-body reveal">
-      Dr. Anuj is the principal consultant at DENTINE, bringing expert-level knowledge across dental science, dermatology, and trichology. With a deep commitment to patient well-being and continuous learning, he delivers treatments that are evidence-based, precise, and personalised.
+<!-- ══ OUR DOCTORS ══ -->
+<section class="doctors-sec sec" id="doctors">
+  <div class="doctors-header">
+    <p class="sec-eyebrow reveal">Expert Care You Can Trust</p>
+    <h2 class="sec-title reveal">Our Specialist Doctors</h2>
+    <p class="sec-body reveal" style="margin-top:14px;">
+      DENTINE brings together four highly qualified specialists across dental surgery, orofacial surgery, dermatology, and cosmetology.
     </p>
-    <div class="doctor-credentials">
-      <div class="cred-item reveal"><span class="cred-dot"></span>Expert in Cosmetic & Restorative Dentistry</div>
-      <div class="cred-item reveal"><span class="cred-dot"></span>Advanced Skin Care & Laser Treatments</div>
-      <div class="cred-item reveal"><span class="cred-dot"></span>Certified Hair Restoration Specialist</div>
-      <div class="cred-item reveal"><span class="cred-dot"></span>Gentle, patient-first approach to all treatments</div>
-      <div class="cred-item reveal"><span class="cred-dot"></span>Available all days — 10:00 AM to 10:00 PM</div>
+  </div>
+
+  <div class="doctors-grid">
+
+    <!-- ── Dr. P. Sirohi ── -->
+    <div class="doc-card">
+      <div class="doc-card-art">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bg1" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="rgba(78,205,196,.18)"/>
+              <stop offset="100%" stop-color="rgba(78,205,196,0)"/>
+            </radialGradient>
+            <linearGradient id="coat1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="100%" stop-color="#d0eef2"/>
+            </linearGradient>
+            <linearGradient id="skin1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#c8845a"/>
+              <stop offset="100%" stop-color="#a06035"/>
+            </linearGradient>
+            <filter id="sh1"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,.3)"/></filter>
+          </defs>
+          <!-- ambient glow -->
+          <ellipse cx="100" cy="110" rx="80" ry="90" fill="url(#bg1)"/>
+          <!-- orbit ring animated -->
+          <circle cx="100" cy="100" r="78" fill="none" stroke="rgba(78,205,196,.12)" stroke-width="1" stroke-dasharray="6 4">
+            <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="18s" repeatCount="indefinite"/>
+          </circle>
+          <!-- body coat -->
+          <rect x="58" y="128" width="84" height="64" rx="10" fill="url(#coat1)" filter="url(#sh1)"/>
+          <path d="M87,128 L100,148 L113,128" fill="none" stroke="rgba(10,123,140,.3)" stroke-width="1.5"/>
+          <!-- arms -->
+          <rect x="42" y="133" width="18" height="46" rx="8" fill="url(#coat1)"/>
+          <rect x="140" y="133" width="18" height="46" rx="8" fill="url(#coat1)"/>
+          <!-- hands -->
+          <ellipse cx="51" cy="184" rx="10" ry="8" fill="url(#skin1)"/>
+          <ellipse cx="149" cy="184" rx="10" ry="8" fill="url(#skin1)"/>
+          <!-- surgical tool in hand -->
+          <line x1="149" y1="178" x2="149" y2="155" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="149" cy="153" rx="5" ry="3" fill="rgba(78,205,196,.7)"/>
+          <!-- neck -->
+          <rect x="91" y="108" width="18" height="22" rx="5" fill="url(#skin1)"/>
+          <!-- head -->
+          <ellipse cx="100" cy="92" rx="30" ry="32" fill="url(#skin1)" filter="url(#sh1)"/>
+          <!-- hair – short, dark -->
+          <path d="M70,84 Q73,58 100,55 Q127,58 130,84 Q122,66 100,63 Q78,66 70,84Z" fill="#1a0a02"/>
+          <!-- eyes -->
+          <ellipse cx="91" cy="89" rx="4.5" ry="5" fill="#4a2210"/>
+          <ellipse cx="109" cy="89" rx="4.5" ry="5" fill="#4a2210"/>
+          <ellipse cx="91" cy="88" rx="2" ry="2" fill="#0d0505"/>
+          <ellipse cx="109" cy="88" rx="2" ry="2" fill="#0d0505"/>
+          <!-- eyebrows -->
+          <path d="M86,82 Q91,79 96,82" fill="none" stroke="#1a0a02" stroke-width="2" stroke-linecap="round"/>
+          <path d="M104,82 Q109,79 114,82" fill="none" stroke="#1a0a02" stroke-width="2" stroke-linecap="round"/>
+          <!-- smile -->
+          <path d="M93,100 Q100,106 107,100" fill="none" stroke="#7a3e1e" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- name tag -->
+          <rect x="122" y="140" width="36" height="18" rx="3" fill="rgba(10,123,140,.15)" stroke="rgba(78,205,196,.3)" stroke-width="1"/>
+          <text x="140" y="150" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#4ECDC4" font-weight="600">DR. P. SIROHI</text>
+          <text x="140" y="155" text-anchor="middle" font-family="sans-serif" font-size="4" fill="rgba(255,255,255,.4)">DENTINE</text>
+          <!-- floating medical cross -->
+          <g transform="translate(28,30)" opacity=".5">
+            <rect x="-4" y="-10" width="8" height="20" rx="2" fill="rgba(78,205,196,.5)">
+              <animate attributeName="opacity" values=".5;1;.5" dur="3s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="-10" y="-4" width="20" height="8" rx="2" fill="rgba(78,205,196,.5)">
+              <animate attributeName="opacity" values=".5;1;.5" dur="3s" repeatCount="indefinite"/>
+            </rect>
+          </g>
+          <!-- float animation on whole figure -->
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,-5;0,0" dur="4s" repeatCount="indefinite" additive="sum"/>
+        </svg>
+      </div>
+      <div class="doc-card-body">
+        <div class="doc-card-name">Dr. P. Sirohi</div>
+        <div class="doc-card-badge">Oro-Facial Surgeon</div>
+        <ul class="doc-qual-list">
+          <li>Oro-Facial Surgeon, MPH</li>
+          <li>FAD (Germany) FMC</li>
+          <li>PGDCC (USA)</li>
+        </ul>
+        <div class="doc-role">Oral & Maxillofacial Specialist</div>
+      </div>
     </div>
+
+    <!-- ── Dr. Preeti ── -->
+    <div class="doc-card">
+      <div class="doc-card-art">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bg2" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="rgba(212,168,83,.15)"/>
+              <stop offset="100%" stop-color="rgba(212,168,83,0)"/>
+            </radialGradient>
+            <linearGradient id="coat2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="100%" stop-color="#fff0f8"/>
+            </linearGradient>
+            <linearGradient id="skin2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#d4956a"/>
+              <stop offset="100%" stop-color="#b07040"/>
+            </linearGradient>
+            <filter id="sh2"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,.3)"/></filter>
+          </defs>
+          <ellipse cx="100" cy="110" rx="80" ry="90" fill="url(#bg2)"/>
+          <!-- sparkle ring -->
+          <circle cx="100" cy="95" r="70" fill="none" stroke="rgba(212,168,83,.1)" stroke-width="1" stroke-dasharray="3 7">
+            <animateTransform attributeName="transform" type="rotate" from="360 100 95" to="0 100 95" dur="22s" repeatCount="indefinite"/>
+          </circle>
+          <!-- body -->
+          <rect x="58" y="128" width="84" height="64" rx="10" fill="url(#coat2)" filter="url(#sh2)"/>
+          <path d="M87,128 L100,148 L113,128" fill="none" stroke="rgba(212,168,83,.4)" stroke-width="1.5"/>
+          <rect x="42" y="133" width="18" height="46" rx="8" fill="url(#coat2)"/>
+          <rect x="140" y="133" width="18" height="46" rx="8" fill="url(#coat2)"/>
+          <ellipse cx="51" cy="184" rx="10" ry="8" fill="url(#skin2)"/>
+          <ellipse cx="149" cy="184" rx="10" ry="8" fill="url(#skin2)"/>
+          <!-- beauty/cosmetic tool -->
+          <line x1="51" y1="178" x2="42" y2="158" stroke="#D4A853" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="41" cy="156" rx="4" ry="6" fill="rgba(212,168,83,.8)" transform="rotate(-20 41 156)"/>
+          <!-- stethoscope -->
+          <path d="M88,140 Q78,158 80,172 Q82,182 92,182 Q102,182 104,172 Q106,158 96,140" fill="none" stroke="#D4A853" stroke-width="2.5" stroke-linecap="round">
+            <animate attributeName="stroke-dasharray" values="0 120;120 0;0 120" dur="4s" repeatCount="indefinite"/>
+          </path>
+          <circle cx="92" cy="185" r="5" fill="#D4A853"/>
+          <!-- neck -->
+          <rect x="91" y="108" width="18" height="22" rx="5" fill="url(#skin2)"/>
+          <!-- head -->
+          <ellipse cx="100" cy="90" rx="30" ry="33" fill="url(#skin2)" filter="url(#sh2)"/>
+          <!-- hair – longer, tied back -->
+          <path d="M70,82 Q72,55 100,52 Q128,55 130,82 Q125,60 100,58 Q75,60 70,82Z" fill="#2a1505"/>
+          <ellipse cx="130" cy="88" rx="6" ry="14" fill="#2a1505"/>
+          <!-- bun shape -->
+          <circle cx="100" cy="50" r="8" fill="#2a1505"/>
+          <!-- face -->
+          <ellipse cx="91" cy="87" rx="4" ry="4.5" fill="#5a2a10"/>
+          <ellipse cx="109" cy="87" rx="4" ry="4.5" fill="#5a2a10"/>
+          <ellipse cx="91" cy="86" rx="2" ry="2" fill="#0d0505"/>
+          <ellipse cx="109" cy="86" rx="2" ry="2" fill="#0d0505"/>
+          <path d="M86,80 Q91,77 96,80" fill="none" stroke="#2a1505" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M104,80 Q109,77 114,80" fill="none" stroke="#2a1505" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M93,99 Q100,105 107,99" fill="none" stroke="#7a3e1e" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- lipstick touch on lips -->
+          <path d="M96,101 Q100,104 104,101" fill="rgba(200,60,100,.4)" stroke="none"/>
+          <!-- name tag -->
+          <rect x="116" y="140" width="32" height="18" rx="3" fill="rgba(212,168,83,.15)" stroke="rgba(212,168,83,.35)" stroke-width="1"/>
+          <text x="132" y="150" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="#D4A853" font-weight="600">DR. PREETI</text>
+          <text x="132" y="155" text-anchor="middle" font-family="sans-serif" font-size="4" fill="rgba(255,255,255,.4)">DENTINE</text>
+          <!-- sparkles -->
+          <g opacity=".7">
+            <text x="160" y="45" font-size="10" fill="rgba(212,168,83,.6)">✦
+              <animate attributeName="opacity" values=".3;1;.3" dur="2.5s" repeatCount="indefinite"/>
+            </text>
+            <text x="30" y="55" font-size="8" fill="rgba(212,168,83,.5)">✦
+              <animate attributeName="opacity" values="1;.2;1" dur="3.2s" repeatCount="indefinite"/>
+            </text>
+          </g>
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,-6;0,0" dur="4.5s" repeatCount="indefinite" additive="sum"/>
+        </svg>
+      </div>
+      <div class="doc-card-body">
+        <div class="doc-card-name">Dr. Preeti</div>
+        <div class="doc-card-badge">Cosmetologist</div>
+        <ul class="doc-qual-list">
+          <li>PGDCC, BDS, MIDA</li>
+          <li>Cosmetologist Aesthetician</li>
+          <li>Dental Surgeon</li>
+        </ul>
+        <div class="doc-role">Skin & Aesthetic Specialist</div>
+      </div>
+    </div>
+
+    <!-- ── Dr. Anuj ── -->
+    <div class="doc-card">
+      <div class="doc-card-art">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bg3" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="rgba(78,205,196,.18)"/>
+              <stop offset="100%" stop-color="rgba(78,205,196,0)"/>
+            </radialGradient>
+            <linearGradient id="coat3" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="100%" stop-color="#e6f6f8"/>
+            </linearGradient>
+            <linearGradient id="skin3" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#c8845a"/>
+              <stop offset="100%" stop-color="#a06035"/>
+            </linearGradient>
+            <filter id="sh3"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,.3)"/></filter>
+          </defs>
+          <ellipse cx="100" cy="110" rx="80" ry="90" fill="url(#bg3)"/>
+          <!-- double orbit -->
+          <circle cx="100" cy="100" r="75" fill="none" stroke="rgba(78,205,196,.1)" stroke-width="1" stroke-dasharray="8 4">
+            <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="15s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="100" cy="100" r="60" fill="none" stroke="rgba(78,205,196,.07)" stroke-width="0.5" stroke-dasharray="4 6">
+            <animateTransform attributeName="transform" type="rotate" from="360 100 100" to="0 100 100" dur="25s" repeatCount="indefinite"/>
+          </circle>
+          <!-- body -->
+          <rect x="58" y="128" width="84" height="64" rx="10" fill="url(#coat3)" filter="url(#sh3)"/>
+          <path d="M87,128 L100,148 L113,128" fill="none" stroke="rgba(10,123,140,.3)" stroke-width="1.5"/>
+          <rect x="42" y="133" width="18" height="46" rx="8" fill="url(#coat3)"/>
+          <rect x="140" y="133" width="18" height="46" rx="8" fill="url(#coat3)"/>
+          <ellipse cx="51" cy="184" rx="10" ry="8" fill="url(#skin3)"/>
+          <ellipse cx="149" cy="184" rx="10" ry="8" fill="url(#skin3)"/>
+          <!-- clipboard in hand -->
+          <rect x="138" y="162" width="24" height="28" rx="3" fill="white" stroke="rgba(10,123,140,.2)" stroke-width="1"/>
+          <rect x="144" y="158" width="6" height="6" rx="1.5" fill="#4ECDC4"/>
+          <line x1="141" y1="174" x2="159" y2="174" stroke="rgba(10,123,140,.2)" stroke-width="1"/>
+          <line x1="141" y1="180" x2="159" y2="180" stroke="rgba(10,123,140,.2)" stroke-width="1"/>
+          <!-- stethoscope aqua -->
+          <path d="M87,142 Q76,160 78,174 Q80,184 90,184 Q100,184 102,174 Q104,160 93,142" fill="none" stroke="#4ECDC4" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="90" cy="187" r="5" fill="#4ECDC4"/>
+          <circle cx="90" cy="187" r="2.5" fill="white"/>
+          <!-- neck -->
+          <rect x="91" y="108" width="18" height="22" rx="5" fill="url(#skin3)"/>
+          <!-- head -->
+          <ellipse cx="100" cy="90" rx="30" ry="32" fill="url(#skin3)" filter="url(#sh3)"/>
+          <!-- hair -->
+          <path d="M70,82 Q73,56 100,53 Q127,56 130,82 Q122,62 100,60 Q78,62 70,82Z" fill="#1a0f05"/>
+          <path d="M70,82 Q67,70 70,60 Q75,50 88,48 Q73,54 70,80Z" fill="#1a0f05"/>
+          <path d="M130,82 Q133,70 130,60 Q125,50 112,48 Q127,54 130,80Z" fill="#1a0f05"/>
+          <!-- glasses -->
+          <rect x="83" y="83" width="14" height="10" rx="4" fill="none" stroke="#2a1a08" stroke-width="1.5"/>
+          <rect x="103" y="83" width="14" height="10" rx="4" fill="none" stroke="#2a1a08" stroke-width="1.5"/>
+          <line x1="97" y1="87" x2="103" y2="87" stroke="#2a1a08" stroke-width="1.5"/>
+          <!-- eyes behind glasses -->
+          <ellipse cx="90" cy="88" rx="3" ry="3.5" fill="#5a2a10"/>
+          <ellipse cx="110" cy="88" rx="3" ry="3.5" fill="#5a2a10"/>
+          <ellipse cx="90" cy="87" rx="1.5" ry="1.5" fill="#0d0505"/>
+          <ellipse cx="110" cy="87" rx="1.5" ry="1.5" fill="#0d0505"/>
+          <!-- eyebrows -->
+          <path d="M84,80 Q90,77 96,80" fill="none" stroke="#1a0f05" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M104,80 Q110,77 116,80" fill="none" stroke="#1a0f05" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- smile -->
+          <path d="M93,101 Q100,107 107,101" fill="none" stroke="#7a3e1e" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- name tag -->
+          <rect x="115" y="140" width="30" height="18" rx="3" fill="rgba(10,123,140,.15)" stroke="rgba(78,205,196,.3)" stroke-width="1"/>
+          <text x="130" y="150" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="#4ECDC4" font-weight="600">DR. ANUJ</text>
+          <text x="130" y="155" text-anchor="middle" font-family="sans-serif" font-size="4" fill="rgba(255,255,255,.4)">DENTINE</text>
+          <!-- pulse ring on stethoscope end -->
+          <circle cx="90" cy="187" r="10" fill="none" stroke="rgba(78,205,196,.4)" stroke-width="1">
+            <animate attributeName="r" values="6;14;6" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".8;0;.8" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,-7;0,0" dur="3.8s" repeatCount="indefinite" additive="sum"/>
+        </svg>
+      </div>
+      <div class="doc-card-body">
+        <div class="doc-card-name">Dr. Anuj</div>
+        <div class="doc-card-badge">Dental Surgeon</div>
+        <ul class="doc-qual-list">
+          <li>BDS, MIDA</li>
+          <li>Dental Surgeon</li>
+          <li>Principal Consultant, DENTINE</li>
+        </ul>
+        <div class="doc-role">Principal Dental Consultant</div>
+      </div>
+    </div>
+
+    <!-- ── Dr. Soumya Ranjan ── -->
+    <div class="doc-card">
+      <div class="doc-card-art">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bg4" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="rgba(78,205,196,.15)"/>
+              <stop offset="100%" stop-color="rgba(78,205,196,0)"/>
+            </radialGradient>
+            <linearGradient id="coat4" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="100%" stop-color="#e0f4f6"/>
+            </linearGradient>
+            <linearGradient id="skin4" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#c87850"/>
+              <stop offset="100%" stop-color="#9a5a2e"/>
+            </linearGradient>
+            <filter id="sh4"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,.3)"/></filter>
+          </defs>
+          <ellipse cx="100" cy="110" rx="80" ry="90" fill="url(#bg4)"/>
+          <!-- scan/ECG effect -->
+          <line x1="20" y1="155" x2="180" y2="155" stroke="rgba(78,205,196,.08)" stroke-width="20">
+            <animate attributeName="y1" values="40;180;40" dur="5s" repeatCount="indefinite"/>
+            <animate attributeName="y2" values="40;180;40" dur="5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".5;0;.5" dur="5s" repeatCount="indefinite"/>
+          </line>
+          <!-- body -->
+          <rect x="58" y="128" width="84" height="64" rx="10" fill="url(#coat4)" filter="url(#sh4)"/>
+          <path d="M87,128 L100,148 L113,128" fill="none" stroke="rgba(10,123,140,.3)" stroke-width="1.5"/>
+          <rect x="42" y="133" width="18" height="46" rx="8" fill="url(#coat4)"/>
+          <rect x="140" y="133" width="18" height="46" rx="8" fill="url(#coat4)"/>
+          <ellipse cx="51" cy="184" rx="10" ry="8" fill="url(#skin4)"/>
+          <ellipse cx="149" cy="184" rx="10" ry="8" fill="url(#skin4)"/>
+          <!-- dental mirror tool -->
+          <line x1="149" y1="178" x2="162" y2="158" stroke="rgba(200,200,200,.8)" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="163" cy="156" r="5" fill="none" stroke="rgba(200,200,200,.8)" stroke-width="1.5"/>
+          <!-- stethoscope teal -->
+          <path d="M87,143 Q76,162 78,175 Q80,185 90,185 Q100,185 102,175 Q104,162 93,143" fill="none" stroke="#4ECDC4" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="90" cy="188" r="5" fill="#4ECDC4"/>
+          <circle cx="90" cy="188" r="2.5" fill="white"/>
+          <!-- pocket -->
+          <rect x="108" y="148" width="26" height="20" rx="3" fill="none" stroke="rgba(10,123,140,.2)" stroke-width="1"/>
+          <text x="121" y="163" text-anchor="middle" font-size="10">📋</text>
+          <!-- neck -->
+          <rect x="91" y="108" width="18" height="22" rx="5" fill="url(#skin4)"/>
+          <!-- head -->
+          <ellipse cx="100" cy="90" rx="30" ry="32" fill="url(#skin4)" filter="url(#sh4)"/>
+          <!-- hair – slightly wavy -->
+          <path d="M70,84 Q72,56 100,53 Q128,56 130,84 Q125,62 100,59 Q75,62 70,84Z" fill="#150a02"/>
+          <path d="M70,84 Q68,72 70,62 Q74,52 86,48 Q72,56 70,82Z" fill="#150a02"/>
+          <path d="M130,84 Q132,72 130,62 Q126,52 114,48 Q128,56 130,82Z" fill="#150a02"/>
+          <!-- wavy hair texture -->
+          <path d="M75,65 Q80,60 85,65 Q90,60 95,65" fill="none" stroke="#0d0602" stroke-width="1.5"/>
+          <!-- eyes -->
+          <ellipse cx="91" cy="88" rx="4" ry="4.5" fill="#4a2210"/>
+          <ellipse cx="109" cy="88" rx="4" ry="4.5" fill="#4a2210"/>
+          <ellipse cx="91" cy="87" rx="2" ry="2" fill="#0d0505"/>
+          <ellipse cx="109" cy="87" rx="2" ry="2" fill="#0d0505"/>
+          <!-- eyebrows -->
+          <path d="M85,81 Q91,78 97,81" fill="none" stroke="#150a02" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M103,81 Q109,78 115,81" fill="none" stroke="#150a02" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- smile wide -->
+          <path d="M92,100 Q100,107 108,100" fill="none" stroke="#7a3e1e" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- name tag -->
+          <rect x="60" y="155" width="38" height="18" rx="3" fill="rgba(10,123,140,.15)" stroke="rgba(78,205,196,.3)" stroke-width="1"/>
+          <text x="79" y="163" text-anchor="middle" font-family="sans-serif" font-size="4.5" fill="#4ECDC4" font-weight="600">DR. SOUMYA</text>
+          <text x="79" y="169" text-anchor="middle" font-family="sans-serif" font-size="4" fill="rgba(255,255,255,.4)">RANJAN</text>
+          <!-- heartbeat line bottom -->
+          <polyline points="15,195 30,195 38,182 46,210 54,175 62,195 80,195" fill="none" stroke="rgba(78,205,196,.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <animate attributeName="opacity" values=".2;.8;.2" dur="2s" repeatCount="indefinite"/>
+          </polyline>
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,-5;0,0" dur="5s" repeatCount="indefinite" additive="sum"/>
+        </svg>
+      </div>
+      <div class="doc-card-body">
+        <div class="doc-card-name">Dr. Soumya Ranjan</div>
+        <div class="doc-card-badge">Dental Surgeon</div>
+        <ul class="doc-qual-list">
+          <li>BDS, MIDA</li>
+          <li>Dental Surgeon</li>
+          <li>Restorative Dentistry Expert</li>
+        </ul>
+        <div class="doc-role">Dental Surgeon</div>
+      </div>
+    </div>
+
   </div>
 </section>
+
 
 <!-- ══ TESTIMONIALS ══ -->
 <section class="testimonials-sec sec">
@@ -1134,26 +1491,26 @@
   <div class="testi-grid">
     <div class="testi-card reveal">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"Dr. Anuj is absolutely brilliant. I had a root canal done here and felt zero pain. The clinic is spotlessly clean and the staff are so warm and professional."</p>
+      <p class="testi-text">"I had a great experience at this dental clinic. Mr. Anuj was very gentle, professional, and explained the procedure clearly. The clinic is clean and hygienic, and the staff is polite. My treatment was painless and smooth. Highly recommended."</p>
       <div class="testi-author">
-        <div class="testi-av">P</div>
-        <div><div class="testi-name">Priya Mehta</div><div class="testi-loc">Knowledge Park II, Greater Noida</div></div>
+        <div class="testi-av">M</div>
+        <div><div class="testi-name">Muskan Gurjar</div><div class="testi-loc">Google Review · ★★★★★</div></div>
       </div>
     </div>
     <div class="testi-card reveal">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"I came for acne scar treatment and the results after 3 sessions are beyond what I expected. Dr. Anuj explained everything clearly. Highly recommend DENTINE!"</p>
+      <p class="testi-text">"Dr. Anuj you're a Genius Dental! 😊 Your care and explanation made me feel super comfortable. The treatment was thorough and painless. Highly recommend! 👍"</p>
+      <div class="testi-author">
+        <div class="testi-av">G</div>
+        <div><div class="testi-name">Gaurav Sharma</div><div class="testi-loc">Google Review · ★★★★★</div></div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"One of the best dental experiences I've had. Doctor Anuj is skilled, gentle, and very professional. The clinic's facilities are modern and hygienic, making the whole visit smooth and comfortable."</p>
       <div class="testi-author">
         <div class="testi-av">R</div>
-        <div><div class="testi-name">Rohit Sinha</div><div class="testi-loc">Eta II, Greater Noida</div></div>
-      </div>
-    </div>
-    <div class="testi-card reveal">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"PRP for hair was life-changing. I had visible regrowth within 2 months! The timing is perfect — open till 10 PM so I can visit after office hours."</p>
-      <div class="testi-author">
-        <div class="testi-av">S</div>
-        <div><div class="testi-name">Suresh Kumar</div><div class="testi-loc">Alpha 1, Greater Noida</div></div>
+        <div><div class="testi-name">Ritu Garg</div><div class="testi-loc">Google Review · ★★★★★</div></div>
       </div>
     </div>
   </div>
@@ -1174,7 +1531,7 @@
       <div class="c-block reveal">
         <div class="c-block-icon">📍</div>
         <div class="c-block-label">Address</div>
-        <div class="c-block-val">Shop No-28, Ground Floor<br>Migsun Vilaasa, Twiinz<br>Eta II, Greater Noida<br>Uttar Pradesh – 201310</div>
+        <div class="c-block-val">Shop No-28, Ground Floor<br>Migsun Twiinz, Twiinz<br>Eta II, Greater Noida<br>Uttar Pradesh – 201310</div>
       </div>
 
       <div class="c-block reveal">
@@ -1376,7 +1733,7 @@
           <rect x="348" y="145" width="162" height="13" rx="5" fill="#0A7B8C"/>
           <rect x="348" y="152" width="162" height="6" fill="#0A7B8C"/>
           <text x="429" y="155" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="white" font-weight="bold" letter-spacing="0.5">DENTINE CLINIC</text>
-          <text x="429" y="170" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#0A7B8C" font-weight="600">Shop 28, Migsun Vilaasa</text>
+          <text x="429" y="170" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#0A7B8C" font-weight="600">Shop 28, Migsun Twiinz</text>
           <text x="429" y="183" text-anchor="middle" font-family="Arial,sans-serif" font-size="6.5" fill="#4A6570">Twiinz, Eta II, Greater Noida</text>
 
           <!-- watermark -->
@@ -1386,7 +1743,7 @@
       <div class="map-btn-row">
         <div class="map-addr-text">
           <strong>DENTINE Dental, Skin &amp; Hair Clinic</strong>
-          Shop No-28, Migsun Vilaasa Twiinz, Eta II, Greater Noida – 201310
+          Shop No-28, Migsun Twiinz, Eta II, Greater Noida – 201310
         </div>
         <a class="btn-maps"
           href="https://www.google.com/maps/search/Migsun+Vilaasa+Twiinz+Eta+2+Greater+Noida"
@@ -1424,14 +1781,14 @@
       <ul>
         <li><a href="tel:+910976170466">097617 04667</a></li>
         <li><a href="https://wa.me/910976170466">WhatsApp Us</a></li>
-        <li><a href="#contact">Migsun Vilaasa, Shop 28</a></li>
+        <li><a href="#contact">Migsun Twiinz, Shop 28</a></li>
         <li><a href="#contact">Eta II, Greater Noida</a></li>
         <li><a href="#contact">Open All Days 10AM–10PM</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">© 2025 DENTINE Dental, Skin &amp; Hair Clinic · Dr. Anuj · Greater Noida, UP · All Rights Reserved</p>
+    <p class="footer-copy">© 2025 DENTINE Dental, Skin &amp; Hair Clinic · Greater Noida, UP · All Rights Reserved</p>
     <p class="footer-copy" style="color:var(--teal-dk)">Best Clinic in Eta II · Greater Noida</p>
   </div>
 </footer>
